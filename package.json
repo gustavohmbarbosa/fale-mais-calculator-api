@@ -12,7 +12,9 @@
     "devDependencies": {
         "axios": "^0.25",
         "git-commit-msg-linter": "^4.1.2",
+        "husky": "^7.0.4",
         "laravel-mix": "^6.0.6",
+        "lint-staged": "^12.4.1",
         "lodash": "^4.17.19",
         "postcss": "^8.1.14"
     }
