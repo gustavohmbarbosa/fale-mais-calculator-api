@@ -5,6 +5,7 @@ namespace Tests\Feature;
 use Tests\TestCase;
 use App\Domain\Entities\Code;
 use Illuminate\Foundation\Testing\RefreshDatabase;
+use Illuminate\Http\Response;
 
 /** @group codes */
 class ListCodesControllerTest extends TestCase
@@ -28,6 +29,7 @@ class ListCodesControllerTest extends TestCase
         $this->code->factory()->count(3)->create();
 
         $response = $this->json('GET', self::ENDPOINT);
+        $response->assertStatus(200);
         $response->assertJsonCount(3);
     }
 
@@ -38,6 +40,7 @@ class ListCodesControllerTest extends TestCase
         $this->code->factory()->count(1)->create();
 
         $response = $this->json('GET', self::ENDPOINT);
+        $response->assertStatus(200);
         $response->assertJsonStructure([
             0 => [
                 'id',
