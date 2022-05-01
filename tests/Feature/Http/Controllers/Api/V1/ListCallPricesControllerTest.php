@@ -39,4 +39,29 @@ class ListCallPricesControllerTest extends TestCase
         $response->assertStatus(200);
         $response->assertJsonCount(1);
     }
+
+    /** @test */
+    public function should_return_data_in_a_valid_format()
+    {
+        $this->withoutExceptionHandling();
+        $data = [
+            'origin' => $this->code->factory()->create()->id,
+            'destiny' => $this->code->factory()->create()->id,
+            'rat_per_minute' => 1.90
+        ];
+        $this->callPrice->create($data);
+
+        $response = $this->json('GET', self::ENDPOINT);
+        $response->assertStatus(200);
+        $response->assertJsonStructure([
+            0 => [
+                'id',
+                'origin',
+                'destiny',
+                'rat_per_minute',
+                'created_at',
+                'updated_at',
+            ]
+        ]);
+    }
 }
