@@ -1,13 +1,85 @@
 {
     "openapi": "3.0.1",
     "info": {
-      "title": "FaleMais Calculator",
-      "description": "LOLDESIGN showMeTheCode",
-      "contact": {
-        "name": "Gustavo Melo",
-        "url": "https://github.com/gustavohmbarbosa",
-        "email": "gustavobarbosa-18@hotmail.com"
-      },
-      "version": "1.0.0"
+        "title": "FaleMais Calculator",
+        "description": "LOLDESIGN showMeTheCode",
+        "contact": {
+            "name": "Gustavo Melo",
+            "url": "https://github.com/gustavohmbarbosa",
+            "email": "gustavobarbosa-18@hotmail.com"
+        },
+        "version": "1.0.0"
+    },
+    "servers": [
+        {
+            "url": "http://127.0.0.1:{port}/api/{version}",
+            "description": "The localhost API server",
+            "variables": {
+                "port": {
+                    "enum": [
+                        "8000",
+                        "3000"
+                    ],
+                    "default": "8000"
+                },
+                "version": {
+                    "enum": [
+                        "v1"
+                    ],
+                    "default": "v1"
+                }
+            }
+        }
+    ],
+    "paths": {
+        "/codes": {
+            "get": {
+                "tags": ["codes"],
+                "description": "List all codes",
+                "responses": {
+                    "200": {
+                        "description": "Returns all codes",
+                        "content": {
+                            "application/json": {
+                                "schema":{
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/Code"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "components": {
+        "schemas": {
+            "Code": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "integer",
+                        "format": "int32",
+                        "example": 1
+                    },
+                    "code": {
+                        "type": "string",
+                        "example": "015"
+                    },
+                    "created_at": {
+                        "type": "string",
+                        "format": "date-time",
+                        "example": "2022-05-01T22:15:51.000000Z"
+                    },
+                    "updated_at": {
+                        "type": "string",
+                        "format": "date-time",
+                        "example": "2022-05-01T22:15:51.000000Z"
+                    }
+                }
+            }
+        }
     }
 }
