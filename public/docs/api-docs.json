@@ -110,12 +110,14 @@
                         "example": 1
                     },
                     "origin": {
-                        "type": "string",
-                        "example": "015"
+                        "type": "integer",
+                        "format": "int32",
+                        "example": 6
                     },
                     "destiny": {
-                        "type": "string",
-                        "example": "041"
+                        "type": "integer",
+                        "format": "int32",
+                        "example": 2
                     },
                     "rat_per_minute": {
                         "type": "number",
