@@ -20,4 +20,4 @@ use Illuminate\Support\Facades\Route;
 
 $version = '/v1';
 
-Route::get("{$version}/codes", [\App\Http\Controllers\Api\V1\Code\ListCodesController::class, 'handle']);
+Route::get("{$version}/codes", [\App\Http\Controllers\Api\V1\ListCodesController::class, 'handle']);
