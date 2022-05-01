@@ -1,0 +1,13 @@
+{
+    "openapi": "3.0.1",
+    "info": {
+      "title": "FaleMais Calculator",
+      "description": "LOLDESIGN showMeTheCode",
+      "contact": {
+        "name": "Gustavo Melo",
+        "url": "https://github.com/gustavohmbarbosa",
+        "email": "gustavobarbosa-18@hotmail.com"
+      },
+      "version": "1.0.0"
+    }
+}
