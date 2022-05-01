@@ -21,3 +21,5 @@ use Illuminate\Support\Facades\Route;
 $version = '/v1';
 
 Route::get("{$version}/codes", [\App\Http\Controllers\Api\V1\ListCodesController::class, 'handle']);
+
+Route::get("{$version}/call_prices", [\App\Http\Controllers\Api\V1\ListCallPricesController::class, 'handle']);
