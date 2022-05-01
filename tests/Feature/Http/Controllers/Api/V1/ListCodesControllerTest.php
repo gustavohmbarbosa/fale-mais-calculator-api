@@ -30,4 +30,21 @@ class ListCodesControllerTest extends TestCase
         $response = $this->json('GET', self::ENDPOINT);
         $response->assertJsonCount(3);
     }
+
+    /** @test */
+    public function should_return_data_in_a_valid_format()
+    {
+        $this->withoutExceptionHandling();
+        $this->code->factory()->count(1)->create();
+
+        $response = $this->json('GET', self::ENDPOINT);
+        $response->assertJsonStructure([
+            0 => [
+                'id',
+                'code',
+                'created_at',
+                'updated_at',
+            ]
+        ]);
+    }
 }

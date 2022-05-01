@@ -10,7 +10,7 @@ class Code extends Model
 {
     use HasFactory;
 
-    protected $guarded = ['id'];
+    protected $fillable = ['code'];
 
     /**
      * Create a new factory instance for the model.
