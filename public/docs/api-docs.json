@@ -110,12 +110,12 @@
                         "example": 1
                     },
                     "origin": {
-                        "type": "string",
-                        "example": "015"
+                            "type": "object",
+                            "$ref": "#/components/schemas/Code"
                     },
                     "destiny": {
-                        "type": "string",
-                        "example": "041"
+                            "type": "object",
+                            "$ref": "#/components/schemas/Code"
                     },
                     "rat_per_minute": {
                         "type": "number",
