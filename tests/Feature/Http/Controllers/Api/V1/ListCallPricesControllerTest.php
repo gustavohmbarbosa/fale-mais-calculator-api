@@ -56,8 +56,18 @@ class ListCallPricesControllerTest extends TestCase
         $response->assertJsonStructure([
             0 => [
                 'id',
-                'origin',
-                'destiny',
+                'origin' => [
+                    'id',
+                    'code',
+                    'created_at',
+                    'updated_at'
+                ],
+                'destiny' => [
+                    'id',
+                    'code',
+                    'created_at',
+                    'updated_at'
+                ],
                 'rat_per_minute',
                 'created_at',
                 'updated_at',
