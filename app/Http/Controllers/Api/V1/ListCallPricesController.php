@@ -13,7 +13,7 @@ class ListCallPricesController extends Controller
 
     public function handle()
     {
-        $callPrices = $this->callPrice->getAll();
+        $callPrices = $this->callPrice->getAllWithRelations(['origin', 'destiny']);
 
         return response()->json($callPrices);
     }

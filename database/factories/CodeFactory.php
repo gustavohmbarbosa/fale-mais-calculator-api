@@ -20,7 +20,7 @@ class CodeFactory extends Factory
     public function definition()
     {
         return [
-            'code' => '0' . $this->faker->unique(true)->numberBetween(10, 99)
+            'code' => $this->faker->unique(true)->numberBetween(100, 999)
         ];
     }
 }

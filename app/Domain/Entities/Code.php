@@ -21,4 +21,14 @@ class Code extends Model
     {
         return CodeFactory::new();
     }
+
+    public function originsInPrice()
+    {
+        return $this->hasMany(CallPrice::class, 'origin', 'id');
+    }
+
+    public function destinationsInPrice()
+    {
+        return $this->hasMany(CallPrice::class, 'destiny', 'id');
+    }
 }

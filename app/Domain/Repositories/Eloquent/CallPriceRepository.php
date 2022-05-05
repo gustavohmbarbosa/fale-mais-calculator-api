@@ -11,4 +11,9 @@ class CallPriceRepository extends BaseRepository implements CallPriceRepositoryI
     {
         parent::__construct(new CallPrice());
     }
+
+    public function getAllWithRelations(mixed $relations)
+    {
+        return $this->model::query()->with($relations)->get();
+    }
 }
