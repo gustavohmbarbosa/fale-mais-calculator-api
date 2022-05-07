@@ -41,4 +41,12 @@ class GetRatePetMinuteControllerTest extends TestCase
         $response->assertStatus(200);
         $response->assertExactJson([1.99]);
     }
+
+    /** @test */
+    public function should_return_404_if_rate_not_found()
+    {
+        $url = str_replace(['{origin}', '{destiny}'], [404, 500], self::ENDPOINT);
+        $response = $this->json('GET', $url);
+        $response->assertStatus(404);
+    }
 }
