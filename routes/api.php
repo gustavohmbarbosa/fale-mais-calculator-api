@@ -10,6 +10,6 @@ use App\Http\Controllers\Api\V1\{
 $version = '/v1';
 
 Route::get("{$version}/codes", [ListCodesController::class, 'handle']);
-Route::get("{$version}/codes/{id}/available-destinations", [GetAvailableDestinationsByOriginCodeController::class, 'handle']);
+Route::get("{$version}/codes/{code}/available-destinations", [GetAvailableDestinationsByOriginCodeController::class, 'handle']);
 
 Route::get("{$version}/call_prices", [ListCallPricesController::class, 'handle']);

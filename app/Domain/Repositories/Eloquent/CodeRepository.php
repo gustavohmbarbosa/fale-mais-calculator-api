@@ -11,4 +11,9 @@ class CodeRepository extends BaseRepository implements CodeRepositoryInterface
     {
         parent::__construct(new Code());
     }
+
+    public function getDataByCode($code)
+    {
+        return $this->model->where('code', $code)->first();
+    }
 }
