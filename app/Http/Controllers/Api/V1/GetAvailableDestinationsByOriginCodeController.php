@@ -14,6 +14,11 @@ class GetAvailableDestinationsByOriginCodeController extends Controller
     public function handle(string $id)
     {
         $code = $this->repository->getById($id);
+
+        if (!$code) {
+            return response()->json(['message' => 'The given code does not exist'], 404);
+        }
+
         $callPricesWithAvailableDestinations = $code->availableDestinations()->get();
         $codes = [];
 
