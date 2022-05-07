@@ -53,9 +53,45 @@
                 }
             }
         },
+        "/codes/{code}/available-destinations": {
+            "get": {
+                "tags": ["codes"],
+                "description": "Get available destinations by a origin code.",
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "code",
+                        "description": "A code",
+                        "required": true,
+                        "schema": {
+                            "type": "string",
+                            "example": "015"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Returns available codes.",
+                        "content": {
+                            "application/json": {
+                                "schema":{
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/Code"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "The given code does not exist."
+                    }
+                }
+            }
+        },
         "/call_prices": {
             "get": {
-                "tags": ["Call Prices"],
+                "tags": ["call prices"],
                 "description": "List all call prices.",
                 "responses": {
                     "200": {
@@ -70,6 +106,51 @@
                                 }
                             }
                         }
+                    }
+                }
+            }
+        },
+        "/call-prices/{origin}/{destiny}/rate-per-minute": {
+            "get": {
+                "tags": ["call prices"],
+                "description": "Get the rate value for the origin and destination provided.",
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "origin",
+                        "description": "The origin code",
+                        "required": true,
+                        "schema": {
+                            "type": "string",
+                            "example": "234"
+                        }
+                    },
+                    {
+                        "in": "path",
+                        "name": "destiny",
+                        "description": "The destiny code",
+                        "required": true,
+                        "schema": {
+                            "type": "string",
+                            "example": "567"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Returns the rate.",
+                        "content": {
+                            "application/json": {
+                                "schema":{
+                                    "type": "number",
+                                    "format": "float",
+                                    "example": 1.95
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Rate not found."
                     }
                 }
             }
