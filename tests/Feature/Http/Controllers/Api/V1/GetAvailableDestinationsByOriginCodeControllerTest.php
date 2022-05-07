@@ -12,7 +12,7 @@ class GetAvailableDestinationsByOriginCodeControllerTest extends TestCase
 {
     use RefreshDatabase;
 
-    const ENDPOINT = '/api/v1/codes/:id/available-destinations';
+    const ENDPOINT = '/api/v1/codes/:code/available-destinations';
 
     protected CallPrice $callPrice;
     protected Code $code;
@@ -35,7 +35,7 @@ class GetAvailableDestinationsByOriginCodeControllerTest extends TestCase
             'rat_per_minute' => 200
         ]);
 
-        $response = $this->json('GET', str_replace(':id', $origin->id, self::ENDPOINT));
+        $response = $this->json('GET', str_replace(':code', $origin->code, self::ENDPOINT));
         $response->assertStatus(200);
         $response->assertJsonCount(1);
     }
@@ -51,7 +51,7 @@ class GetAvailableDestinationsByOriginCodeControllerTest extends TestCase
             'rat_per_minute' => 200
         ]);
 
-        $response = $this->json('GET', str_replace(':id', $origin->id, self::ENDPOINT));
+        $response = $this->json('GET', str_replace(':code', $origin->code, self::ENDPOINT));
         $response->assertStatus(200);
         $response->assertJsonStructure([
             0 => [
@@ -66,7 +66,7 @@ class GetAvailableDestinationsByOriginCodeControllerTest extends TestCase
     /** @test */
     public function should_return_404_if_the_given_origin_code_does_not_exist()
     {
-        $response = $this->json('GET', str_replace(':id', 1, self::ENDPOINT));
+        $response = $this->json('GET', str_replace(':code', 234, self::ENDPOINT));
         $response->assertStatus(404);
     }
 }
