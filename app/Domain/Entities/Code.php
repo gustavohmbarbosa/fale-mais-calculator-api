@@ -24,11 +24,11 @@ class Code extends Model
 
     public function availableDestinations()
     {
-        return $this->hasMany(CallPrice::class, 'origin', 'id');
+        return $this->hasMany(CallPrice::class, 'origin', 'code');
     }
 
     public function availableOrigins()
     {
-        return $this->hasMany(CallPrice::class, 'destiny', 'id');
+        return $this->hasMany(CallPrice::class, 'destiny', 'code');
     }
 }

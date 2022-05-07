@@ -30,8 +30,8 @@ class GetAvailableDestinationsByOriginCodeControllerTest extends TestCase
         $origin = $this->code->factory()->create();
         $destiny = $this->code->factory()->create();
         $this->callPrice->create([
-            'origin' => $origin->id,
-            'destiny' => $destiny->id,
+            'origin' => $origin->code,
+            'destiny' => $destiny->code,
             'rate_per_minute' => 200
         ]);
 
@@ -46,8 +46,8 @@ class GetAvailableDestinationsByOriginCodeControllerTest extends TestCase
         $origin = $this->code->factory()->create();
         $destiny = $this->code->factory()->create();
         $this->callPrice->create([
-            'origin' => $origin->id,
-            'destiny' => $destiny->id,
+            'origin' => $origin->code,
+            'destiny' => $destiny->code,
             'rate_per_minute' => 200
         ]);
 

@@ -10,11 +10,11 @@ class CallPrice extends Model
 
     public function origin()
     {
-        return $this->belongsTo(Code::class, 'origin', 'id');
+        return $this->belongsTo(Code::class, 'origin', 'code');
     }
 
     public function destiny()
     {
-        return $this->belongsTo(Code::class, 'destiny', 'id');
+        return $this->belongsTo(Code::class, 'destiny', 'code');
     }
 }

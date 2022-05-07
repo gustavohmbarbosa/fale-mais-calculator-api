@@ -15,13 +15,13 @@ return new class extends Migration
     {
         Schema::create('call_prices', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('origin');
-            $table->unsignedBigInteger('destiny');
+            $table->string('origin', 3);
+            $table->string('destiny', 3);
             $table->float('rate_per_minute', 5, 2);
             $table->timestamps();
 
-            $table->foreign('origin')->references('id')->on('codes');
-            $table->foreign('destiny')->references('id')->on('codes');
+            $table->foreign('origin')->references('code')->on('codes');
+            $table->foreign('destiny')->references('code')->on('codes');
         });
     }
 
