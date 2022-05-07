@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Api\V1;
 use App\Http\Controllers\Controller;
 use App\Domain\Repositories\Interfaces\CallPriceRepositoryInterface;
 
-class GetRatePetMinuteController extends Controller
+class GetRatePerMinuteController extends Controller
 {
     public function __construct(protected CallPriceRepositoryInterface $repository)
     {

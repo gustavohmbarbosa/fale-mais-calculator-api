@@ -5,11 +5,11 @@ use App\Http\Controllers\Api\V1\{
     ListCodesController,
     GetAvailableDestinationsByOriginCodeController,
     ListCallPricesController,
-    GetRatePetMinuteController
+    GetRatePerMinuteController
 };
 
 Route::get("/codes", [ListCodesController::class, 'handle']);
 Route::get("/codes/{code}/available-destinations", [GetAvailableDestinationsByOriginCodeController::class, 'handle']);
 
 Route::get("/call-prices", [ListCallPricesController::class, 'handle']);
-Route::get("/call-prices/{origin}/{destiny}/rate-per-minute", [GetRatePetMinuteController::class, 'handle']);
+Route::get("/call-prices/{origin}/{destiny}/rate-per-minute", [GetRatePerMinuteController::class, 'handle']);

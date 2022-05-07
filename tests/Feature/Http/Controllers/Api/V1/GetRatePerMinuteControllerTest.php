@@ -8,7 +8,7 @@ use App\Domain\Entities\Code;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 
 /** @group call_prices */
-class GetRatePetMinuteControllerTest extends TestCase
+class GetRatePerMinuteControllerTest extends TestCase
 {
     use RefreshDatabase;
 
