@@ -2,8 +2,10 @@
 
 namespace Database\Seeders;
 
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use App\Domain\Entities\Code;
 use Illuminate\Database\Seeder;
+use App\Domain\Entities\CallPrice;
+use Faker\Generator;
 
 class DatabaseSeeder extends Seeder
 {
@@ -14,6 +16,13 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // \App\Models\User::factory(10)->create();
+        $faker = new Generator();
+        for ($i = 0; $i < 10; $i++) {
+            CallPrice::create([
+                'origin' => Code::factory()->create()->id,
+                'destiny' => Code::factory()->create()->id,
+                'rate_per_minute' => $faker->numberBetween(10, 1000)
+            ]);
+        }
     }
 }

@@ -32,7 +32,7 @@ class GetAvailableDestinationsByOriginCodeControllerTest extends TestCase
         $this->callPrice->create([
             'origin' => $origin->id,
             'destiny' => $destiny->id,
-            'rat_per_minute' => 200
+            'rate_per_minute' => 200
         ]);
 
         $response = $this->json('GET', str_replace(':code', $origin->code, self::ENDPOINT));
@@ -48,7 +48,7 @@ class GetAvailableDestinationsByOriginCodeControllerTest extends TestCase
         $this->callPrice->create([
             'origin' => $origin->id,
             'destiny' => $destiny->id,
-            'rat_per_minute' => 200
+            'rate_per_minute' => 200
         ]);
 
         $response = $this->json('GET', str_replace(':code', $origin->code, self::ENDPOINT));

@@ -117,7 +117,7 @@
                         "type": "object",
                         "$ref": "#/components/schemas/Code"
                     },
-                    "rat_per_minute": {
+                    "rate_per_minute": {
                         "type": "number",
                         "format": "float",
                         "example": 1.95

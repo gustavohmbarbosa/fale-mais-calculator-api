@@ -31,7 +31,7 @@ class ListCallPricesControllerTest extends TestCase
         $data = [
             'origin' => $this->code->factory()->create()->id,
             'destiny' => $this->code->factory()->create()->id,
-            'rat_per_minute' => 1.90
+            'rate_per_minute' => 1.90
         ];
         $this->callPrice->create($data);
 
@@ -47,7 +47,7 @@ class ListCallPricesControllerTest extends TestCase
         $data = [
             'origin' => $this->code->factory()->create()->id,
             'destiny' => $this->code->factory()->create()->id,
-            'rat_per_minute' => 1.90
+            'rate_per_minute' => 1.90
         ];
         $this->callPrice->create($data);
 
@@ -68,7 +68,7 @@ class ListCallPricesControllerTest extends TestCase
                     'created_at',
                     'updated_at'
                 ],
-                'rat_per_minute',
+                'rate_per_minute',
                 'created_at',
                 'updated_at',
             ]

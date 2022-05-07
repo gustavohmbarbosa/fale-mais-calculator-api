@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class CallPrice extends Model
 {
-    protected $fillable = ['origin', 'destiny', 'rat_per_minute'];
+    protected $fillable = ['origin', 'destiny', 'rate_per_minute'];
 
     public function origin()
     {

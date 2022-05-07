@@ -17,7 +17,7 @@ return new class extends Migration
             $table->id();
             $table->unsignedBigInteger('origin');
             $table->unsignedBigInteger('destiny');
-            $table->float('rat_per_minute', 5, 2);
+            $table->float('rate_per_minute', 5, 2);
             $table->timestamps();
 
             $table->foreign('origin')->references('id')->on('codes');
