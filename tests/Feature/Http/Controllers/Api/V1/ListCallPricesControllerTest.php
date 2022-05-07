@@ -12,7 +12,7 @@ class ListCallPricesControllerTest extends TestCase
 {
     use RefreshDatabase;
 
-    const ENDPOINT = '/api/v1/call_prices';
+    const ENDPOINT = '/api/v1/call-prices';
 
     protected CallPrice $callPrice;
     protected Code $code;
