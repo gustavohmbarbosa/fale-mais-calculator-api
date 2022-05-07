@@ -62,4 +62,11 @@ class GetAvailableDestinationsByOriginCodeControllerTest extends TestCase
             ]
         ]);
     }
+
+    /** @test */
+    public function should_return_404_if_the_given_origin_code_does_not_exist()
+    {
+        $response = $this->json('GET', str_replace(':id', 1, self::ENDPOINT));
+        $response->assertStatus(404);
+    }
 }
