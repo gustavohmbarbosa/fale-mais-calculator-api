@@ -22,12 +22,12 @@ class Code extends Model
         return CodeFactory::new();
     }
 
-    public function originsInPrice()
+    public function availableDestinations()
     {
         return $this->hasMany(CallPrice::class, 'origin', 'id');
     }
 
-    public function destinationsInPrice()
+    public function availableOrigins()
     {
         return $this->hasMany(CallPrice::class, 'destiny', 'id');
     }
