@@ -25,6 +25,22 @@ class GetAvailableDestinationsByOriginCodeControllerTest extends TestCase
     }
 
     /** @test */
+    public function should_return_available_destinations_by_the_given_origin_code()
+    {
+        $origin = $this->code->factory()->create();
+        $destiny = $this->code->factory()->create();
+        $this->callPrice->create([
+            'origin' => $origin->id,
+            'destiny' => $destiny->id,
+            'rat_per_minute' => 200
+        ]);
+
+        $response = $this->json('GET', str_replace(':id', $origin->id, self::ENDPOINT));
+        $response->assertStatus(200);
+        $response->assertJsonCount(1);
+    }
+
+    /** @test */
     public function should_return_data_in_a_valid_format()
     {
         $origin = $this->code->factory()->create();
