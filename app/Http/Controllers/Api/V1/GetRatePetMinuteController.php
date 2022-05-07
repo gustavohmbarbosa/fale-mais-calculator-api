@@ -16,7 +16,7 @@ class GetRatePetMinuteController extends Controller
         $callPrice = $this->repository->getByOriginAndDestiny($origin, $destiny);
 
         if (!$callPrice) {
-            return response()->json(['message' => 'The given data is invalid'], 404);
+            return response()->json(['message' => 'Rate not found'], 404);
         }
 
         return response()->json($callPrice->rate_per_minute);
