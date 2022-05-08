@@ -19,9 +19,9 @@ class DatabaseSeeder extends Seeder
         $faker = new Generator();
         for ($i = 0; $i < 10; $i++) {
             CallPrice::create([
-                'origin' => Code::factory()->create()->id,
-                'destiny' => Code::factory()->create()->id,
-                'rate_per_minute' => $faker->numberBetween(10, 1000)
+                'origin' => Code::factory()->create()->code,
+                'destiny' => Code::factory()->create()->code,
+                'rate_per_minute' => $faker->numberBetween(0.50, 10)
             ]);
         }
     }

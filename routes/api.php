@@ -5,7 +5,8 @@ use App\Http\Controllers\Api\V1\{
     ListCodesController,
     GetAvailableDestinationsByOriginCodeController,
     ListCallPricesController,
-    GetRatePerMinuteController
+    GetRatePerMinuteController,
+    GetPlansWithPricesController
 };
 
 Route::get("/codes", [ListCodesController::class, 'handle']);
@@ -13,3 +14,5 @@ Route::get("/codes/{code}/available-destinations", [GetAvailableDestinationsByOr
 
 Route::get("/call-prices", [ListCallPricesController::class, 'handle']);
 Route::get("/call-prices/{origin}/{destiny}/rate-per-minute", [GetRatePerMinuteController::class, 'handle']);
+
+Route::get("/plans", [GetPlansWithPricesController::class, 'handle']);
