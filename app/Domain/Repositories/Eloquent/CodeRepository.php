@@ -14,6 +14,6 @@ class CodeRepository extends BaseRepository implements CodeRepositoryInterface
 
     public function getDataByCode($code)
     {
-        return $this->model->where('code', $code)->first();
+        return $this->entity->where('code', $code)->first();
     }
 }

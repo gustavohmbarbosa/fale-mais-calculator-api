@@ -19,7 +19,7 @@ class CallPriceRepository extends BaseRepository implements CallPriceRepositoryI
      */
     public function getAllWithRelations(string|array $relations)
     {
-        return $this->model::with($relations)->get();
+        return $this->entity::with($relations)->get();
     }
 
     /**
@@ -30,7 +30,7 @@ class CallPriceRepository extends BaseRepository implements CallPriceRepositoryI
      */
     public function getByOriginAndDestiny(string $origin, string $destiny)
     {
-        return $this->model::where([
+        return $this->entity::where([
             ['origin', '=', $origin],
             ['destiny', '=', $destiny]
         ])->first();

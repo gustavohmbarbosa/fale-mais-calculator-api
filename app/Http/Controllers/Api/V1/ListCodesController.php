@@ -7,13 +7,13 @@ use App\Domain\Repositories\Interfaces\CodeRepositoryInterface;
 
 class ListCodesController extends Controller
 {
-    public function __construct(protected CodeRepositoryInterface $code)
+    public function __construct(protected CodeRepositoryInterface $repository)
     {
     }
 
     public function handle()
     {
-        $codes = $this->code->getAll();
+        $codes = $this->repository->getAll();
 
         return response()->json($codes);
     }
