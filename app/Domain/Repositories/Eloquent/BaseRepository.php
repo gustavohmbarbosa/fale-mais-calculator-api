@@ -18,6 +18,6 @@ class BaseRepository implements BaseRepositoryInterface
 
     public function getAll()
     {
-        return $this->entity->get();
+        return $this->entity->all();
     }
 }
