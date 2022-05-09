@@ -9,6 +9,8 @@ use App\Http\Controllers\Api\V1\{
     GetPlansWithPricesController
 };
 
+Route::get('/', fn () => response()->json(['message' => 'FaleMais Calculator is one hundred percent working']));
+
 Route::get("/codes", [ListCodesController::class, 'handle']);
 Route::get("/codes/{code}/available-destinations", [GetAvailableDestinationsByOriginCodeController::class, 'handle']);
 
