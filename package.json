@@ -9,6 +9,10 @@
         "prod": "npm run production",
         "production": "mix --production"
     },
+    "engines": {
+        "node": "16.x",
+        "npm": "6.x"
+    },
     "devDependencies": {
         "axios": "^0.25",
         "git-commit-msg-linter": "^4.1.2",
