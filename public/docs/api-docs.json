@@ -154,6 +154,49 @@
                     }
                 }
             }
+        },
+        "/plans": {
+            "get": {
+                "tags": ["plans"],
+                "description": "Get plans with prices calculated.",
+                "parameters": [
+                    {
+                        "in": "query",
+                        "name": "rate",
+                        "description": "Rate by origin and destiny provided.",
+                        "required": true,
+                        "schema": {
+                            "type": "number",
+                            "example": "1.99"
+                        }
+                    },
+                    {
+                        "in": "query",
+                        "name": "minutes",
+                        "description": "Total number of minutes desired to use.",
+                        "required": true,
+                        "schema": {
+                            "type": "number",
+                            "example": "60"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Returns all plans with prices.",
+                        "content": {
+                            "application/json": {
+                                "schema":{
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/Plan"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
         }
     },
     "components": {
@@ -212,6 +255,29 @@
                         "type": "string",
                         "format": "date-time",
                         "example": "2022-05-01T22:15:51.000000Z"
+                    }
+                }
+            },
+            "Plan": {
+                "type":"object",
+                "properties": {
+                    "id": {
+                        "type": "name",
+                        "format": "string",
+                        "example": "Fala Mais 120"
+                    },
+                    "minutes_per_mouth": {
+                        "type": "number",
+                        "format": "integer",
+                        "example": 120
+                    },
+                    "price_with_plan": {
+                        "type": "string",
+                        "example": "167,20"
+                    },
+                    "price_without_plan": {
+                        "type": "string",
+                        "example": "380"
                     }
                 }
             }
