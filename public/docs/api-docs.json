@@ -261,9 +261,8 @@
             "Plan": {
                 "type":"object",
                 "properties": {
-                    "id": {
-                        "type": "name",
-                        "format": "string",
+                    "name": {
+                        "type": "string",
                         "example": "Fala Mais 120"
                     },
                     "minutes_per_mouth": {
